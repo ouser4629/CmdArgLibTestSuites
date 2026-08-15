@@ -1,5 +1,5 @@
 <!-- 
-//  Copyright (c) 2025-2026 Psummerland2 LLC.
+//  Copyright (c) 2025-2026 Peter Buenafuente Summerland.
 //  All rights reserved.
 //
 //  This Source Code Form is subject to the terms of the Mozilla Public
@@ -9,7 +9,7 @@
 
 ## CmdArgLibTestSuites
 
-CmdArgLibTestSuites is part of the [Command Argument Library](https://github.com/psummerland2/cmd-arg-lib.git). 
+CmdArgLibTestSuites is part of the [Command Argument Library](https://github.com/ouser4629/cmd-arg-lib.git). 
 
 It contains test suites for other modules provided by the library.
 
@@ -29,5 +29,5 @@ This software:
 
 ## See Also
 
-[cmd-arg-lib aka Command Argument Library](https://github.com/psummerland2/cmd-arg-lib.git), 
-[CmdArgLibTestSupport](https://github.com/psummerland2/CmdArgLibTestSupport.git)
+[cmd-arg-lib aka Command Argument Library](https://github.com/ouser4629/cmd-arg-lib.git), 
+[CmdArgLibTestSupport](https://github.com/ouser4629/CmdArgLibTestSupport.git)
