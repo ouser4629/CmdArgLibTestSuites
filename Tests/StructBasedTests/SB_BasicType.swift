@@ -8,14 +8,14 @@
 import Foundation
 import Testing
 import CmdArgLibCore
-import CmdArgLibCommandNodeStruct
+import CmdArgLibCommandNodeFrame
 import CmdArgLibTestSupport
 
 /// Test basic types, `B`: String, Int, Double and CmdArgEnum
 /// Test that values are properly assigned to `B`,  `Array<B>`,  and `Variadic<B>` with and  wtihout
 /// default values. Test `Optional<B>` witn (implied) default value of nil (other default values are
 /// not allowed).
-struct SB_BasicMain<B:CmdArgBasicType>:CommandNodeStruct {
+struct SB_BasicMain<B:CmdArgBasicType>:CommandNodeFrame {
     var configuration: CommandNodeConfiguration<Void>? = CommandNodeConfiguration<Void>(
         commandName: "sb-basic-main",
         embellishments: [

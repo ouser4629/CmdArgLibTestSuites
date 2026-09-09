@@ -44,7 +44,7 @@ if includeMacroBasedCode {
     dependencies.append(.package(url: "https://github.com/ouser4629/CmdArgLibMacros.git", branch: "main"))
 }
 if includeStuctBasedCode {
-    dependencies.append(.package(url: "https://github.com/ouser4629/CmdArgLibCommandNodeStruct.git", branch: "main"))
+    dependencies.append(.package(url: "https://github.com/ouser4629/CmdArgLibCommandNodeFrame.git", branch: "main"))
 }
 
 // Shared targets
@@ -61,7 +61,7 @@ if includeStuctBasedCode {
         .testTarget(
             name:"StructBasedTests",
             dependencies: [
-                "CmdArgLibCore","CmdArgLibCommandNodeStruct", "CmdArgLibTestSupport"
+                "CmdArgLibCore","CmdArgLibCommandNodeFrame", "CmdArgLibTestSupport"
             ]
         )
     ]

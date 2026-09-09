@@ -9,9 +9,9 @@ import CmdArgLibCore
 import CmdArgLibTestSupport
 import Foundation
 import Testing
-import CmdArgLibCommandNodeStruct
+import CmdArgLibCommandNodeFrame
 
-struct SB_RawArgTestsMain: CommandNodeStruct {
+struct SB_RawArgTestsMain: CommandNodeFrame {
 
     // Not required - have non-nil default value
     var arg: RawArg = RawArg(parameterName: "argd", value: "0")
