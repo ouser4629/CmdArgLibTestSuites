@@ -24,10 +24,3 @@ This software:
 * is currently in beta (version 0.5.0), and has only been tested for macOS
 
 * requires macOS 12. 
-
----
-
-## See Also
-
-[cmd-arg-lib aka Command Argument Library](https://github.com/ouser4629/cmd-arg-lib.git), 
-[CmdArgLibTestSupport](https://github.com/ouser4629/CmdArgLibTestSupport.git)
