@@ -26,14 +26,6 @@ var includeMacroBasedCode = true
 var products: [Product] = [
     .library(name: "TestSuiteSupport", targets: ["TestSuiteSupport"])
 ]
-if includeStuctBasedCode {
-    products += [
-    ]
-}
-if includeMacroBasedCode {
-    products += [
-    ]
-}
 
 // Dependencies
 var dependencies: [Package.Dependency] = [
