@@ -34,13 +34,25 @@ struct ShowMacroTest {
           --call-names-macro        Show call name show macro expansion.
           --label-macros            Show label show macro expansion.
           --type-macros             Show type and element show macro expansion.
+        
+        LABELS NOTE
+          * the shortest label of the "greeting" parameter is "-g"
+          * the shortest label of the "maybeName" parameter is "-n"
+          * the shortest label of the "color" parameter is "-c"
+          * the longest label of the "greeting" parameter is "-g"
+          * the longest label of the "maybeName" parameter is "--name"
+          * the longest label of the "color" parameter is "--color"
+          * the joined labels of the "greeting" parameter is "-g"
+          * the joined labels of the "maybeName" parameter is "-n/--name"
+          * the joined labels of the "color" parameter is "-c/--color"
+          * the joined labels of the "help" parameter is "-h/-help/--help"
         """
         let ok = testOutput(of: run, with: input, expecting: expected)
         #expect(ok)
     }
 
 
-    @Test func test12() throws {
+    @Test func test2() throws {
         let input = ""
         let expected = """
         Errors:
@@ -79,16 +91,16 @@ struct ShowMacroTest {
     @Test func test5() throws {
         let input = "--label-macros"
         let expected = """
-         * the shortest label of the "greeting" parameter is "-g"
-         * the shortest label of the "greeting" parameter is "-g"
-         * the shortest label of the "maybeName" parameter is "-n"
-         * the shortest label of the "color" parameter is "-c"
-         * the longest label of the "greeting" parameter is "-g"
-         * the longest label of the "maybeName" parameter is "--name"
-         * the longest label of the "color" parameter is "--color"
-         * the joined labels of the "greeting" parameter is "-g"
-         * the joined labels of the "maybeName" parameter is "-n/--name"
-         * the joined labels of the "color" parameter is "-c/--color"
+          * the shortest label of the "greeting" parameter is "-g"
+          * the shortest label of the "maybeName" parameter is "-n"
+          * the shortest label of the "color" parameter is "-c"
+          * the longest label of the "greeting" parameter is "-g"
+          * the longest label of the "maybeName" parameter is "--name"
+          * the longest label of the "color" parameter is "--color"
+          * the joined labels of the "greeting" parameter is "-g"
+          * the joined labels of the "maybeName" parameter is "-n/--name"
+          * the joined labels of the "color" parameter is "-c/--color"
+          * the joined labels of the "help" parameter is "-h/-help/--help"
         """
 
         let ok = testOutput(of: run, with: input, expecting: expected)
@@ -98,14 +110,14 @@ struct ShowMacroTest {
     @Test func test6() throws {
         let input = "--type-macros"
         let expected = """
-         * the type of the "greeting" parameter is "<greeting>"
-         * the type of the "greeting" parameter is "<greeting>"
-         * the type of the "name" parameter is "<full-name>?"
-         * the type of the "colors" parameter is "[<color>]"
-         * the type of the "animals" parameter is "<animal>..."
-         * the type of the wrapped element of the "maybeName" parameter is "<full-name>"
-         * the type of an element of the "colors" parameter is "<color>" 
-         * the type of an element of the "animals" parameter is "<animal>"
+          * the type of the "greeting" parameter is "<greeting>"
+          * the type of the "name" parameter is "<full-name>?"
+          * the type of the "colors" parameter is "[<color>]"
+          * the type of the "animals" parameter is "<animal>..."
+          * the type of the wrapped element of the "maybeName" parameter is "<full-name>"
+          * the type of an element of the "colors" parameter is "<color>" 
+          * the type of an element of the "animals" parameter is "<animal>"
+          * the description of the element type of the "maybeName" parameter is "full name"
         """
 
         let ok = testOutput(of: run, with: input, expecting: expected)

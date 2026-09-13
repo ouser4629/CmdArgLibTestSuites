@@ -47,6 +47,7 @@ private let helpElements: [ShowElement] = [
     .parameter("callNamesMacro","Show call name show macro expansion"),
     .parameter("labelMacros","Show label show macro expansion"),
     .parameter("typeMacros","Show type and element show macro expansion"),
+    .lines("\nLABELS NOTE\n", labelsNote)
 ]
 
 private let callNamesNote = #"The call name is "$N{}""#
