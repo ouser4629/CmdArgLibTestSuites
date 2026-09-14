@@ -7,11 +7,11 @@
 
 // swift-tools-version: 6.2
 
-import CompilerPluginSupport
+//import CompilerPluginSupport
 import PackageDescription
 
 // Include desired examples
-let includeStuctBasedCode = true
+let includeStructBasedCode = true
 var includeMacroBasedCode = true
 
 // Include the samples that use CmdArgLibMacros only when built with
@@ -31,12 +31,13 @@ var products: [Product] = [
 var dependencies: [Package.Dependency] = [
     .package(url: "https://github.com/ouser4629/CmdArgLibCore.git", branch: "main"),
     .package(url: "https://github.com/ouser4629/CmdArgLibHelpScreen.git", branch: "main"),
+    .package(url: "https://github.com/ouser4629/CmdArgLibCompletions.git", branch: "main"),
     .package(url: "https://github.com/ouser4629/CmdArgLibTestSupport.git", branch: "main"),
 ]
 if includeMacroBasedCode {
     dependencies.append(.package(url: "https://github.com/ouser4629/CmdArgLibMacros.git", branch: "main"))
 }
-if includeStuctBasedCode {
+if includeStructBasedCode {
     dependencies.append(.package(url: "https://github.com/ouser4629/CmdArgLibCommandNodeFrame.git", branch: "main"))
 }
 
@@ -49,14 +50,20 @@ var targets: [Target] = [
 ]
 
 // Struct-base API targets
-if includeStuctBasedCode {
+if includeStructBasedCode {
     targets += [
         .testTarget(
             name:"StructBasedTests",
             dependencies: [
                 "CmdArgLibCore","CmdArgLibCommandNodeFrame", "CmdArgLibTestSupport"
             ]
-        )
+        ),
+        .testTarget(
+            name: "HelpScreenTests",
+            dependencies: [
+                "CmdArgLibCore", "CmdArgLibCommandNodeFrame", "CmdArgLibHelpScreen", "CmdArgLibCompletions", "CmdArgLibTestSupport",
+            ]
+        ),
     ]
 }
 

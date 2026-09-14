@@ -24,7 +24,6 @@ struct SB_RawArgTestsMain: CommandNodeFrame {
     var rarga: [RawArg]? = nil
     var rargv: Variadic<RawArg>? = nil
 
-    
     var argd: RawArg = RawArg(parameterName: "argd", value: "default value for argd")
 
     func run(state: [Void]) throws -> [Void]
