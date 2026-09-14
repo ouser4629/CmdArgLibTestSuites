@@ -31,6 +31,7 @@ var products: [Product] = [
 var dependencies: [Package.Dependency] = [
     .package(url: "https://github.com/ouser4629/CmdArgLibCore.git", branch: "main"),
     .package(url: "https://github.com/ouser4629/CmdArgLibHelpScreen.git", branch: "main"),
+    .package(url: "https://github.com/ouser4629/CmdArgLibManpage.git", branch: "main"),
     .package(url: "https://github.com/ouser4629/CmdArgLibCompletions.git", branch: "main"),
     .package(url: "https://github.com/ouser4629/CmdArgLibTestSupport.git", branch: "main"),
 ]
@@ -88,6 +89,12 @@ if includeMacroBasedCode {
             name: "ShowMacroTests",
             dependencies: [
                 "CmdArgLibCore", "CmdArgLibMacros", "CmdArgLibHelpScreen", "CmdArgLibTestSupport",
+            ]
+        ),
+        .testTarget(
+            name: "ManpageTests",
+            dependencies: [
+                "CmdArgLibCore", "CmdArgLibMacros", "CmdArgLibManpage", "CmdArgLibCompletions", "CmdArgLibTestSupport",
             ]
         ),
     ]
