@@ -26,7 +26,7 @@ It contains test suites for other modules provided by the library.
 
 This software:
 
-* is licensed under the [Mozilla Public License, v. 2.0 "MPL-2.0"](https://mozilla.org/MPL/2.0)
+* is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 * is currently in beta (version 0.5.0), and has only been tested for macOS
 
