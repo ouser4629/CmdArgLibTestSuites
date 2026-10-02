@@ -13,14 +13,14 @@
 // limitations under the License.
 
 import CmdArgLibCore
-import CmdArgLibCommandNodeFrame
+import CmdArgLibCommandNodeDef
 import CmdArgLibHelpScreen
 import CmdArgLibCompletions
 
 typealias Name = String
 enum Pet: String, CmdArgEnum { case dog, cat, bird }
 
-struct PersonS: CommandNodeFrame {
+struct PersonS: CommandNodeDef {
     var help: MetaFlag = MetaFlag(helpElements: helpLayout)
     var l: Flag = false
     var u: Flag = false
@@ -32,7 +32,7 @@ struct PersonS: CommandNodeFrame {
     var generateCompletionScript: MetaOption<CompletionGenerator> = MetaOption(generator)
 
     // Configuration
-    var configuration: CommandNodeConfiguration<Void>? = CommandNodeConfiguration<Void>(
+    var configuration: CommandNodeConfig<Void>? = CommandNodeConfig<Void>(
         commandName: "person-s",
         shadowGroups: ["u l"],
         embellishments: [

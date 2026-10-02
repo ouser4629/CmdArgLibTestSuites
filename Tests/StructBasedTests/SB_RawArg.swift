@@ -16,9 +16,9 @@ import CmdArgLibCore
 import CmdArgLibTestSupport
 import Foundation
 import Testing
-import CmdArgLibCommandNodeFrame
+import CmdArgLibCommandNodeDef
 
-struct SB_RawArgTestsMain: CommandNodeFrame {
+struct SB_RawArgTestsMain: CommandNodeDef {
 
     // Not required - have non-nil default value
     var arg: RawArg = RawArg(parameterName: "argd", value: "0")
@@ -60,7 +60,7 @@ struct SB_RawArgTestsMain: CommandNodeFrame {
         throw Exception.stdout(output.joined(separator: "\n"))
     }
 
-    var configuration: CommandNodeConfiguration<Void>? = CommandNodeConfiguration<Void>(
+    var configuration: CommandNodeConfig<Void>? = CommandNodeConfig<Void>(
         commandName: "rawArgs",
         embellishments: [
             .embellish("argv", typeName: "Variadic<RawArg>"),
@@ -83,7 +83,7 @@ struct SB_RawArgTests {
         ----------------
         0
         """
-        let ok = await testOutput(of: SB_RawArgTestsMain.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_RawArgTestsMain().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -99,7 +99,7 @@ struct SB_RawArgTests {
         vv1 vv2 vv3
         mm
         """
-        let ok = await testOutput(of: SB_RawArgTestsMain.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_RawArgTestsMain().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 }

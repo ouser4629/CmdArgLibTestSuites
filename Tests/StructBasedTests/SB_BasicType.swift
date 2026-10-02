@@ -15,15 +15,15 @@
 import Foundation
 import Testing
 import CmdArgLibCore
-import CmdArgLibCommandNodeFrame
+import CmdArgLibCommandNodeDef
 import CmdArgLibTestSupport
 
 /// Test basic types, `B`: String, Int, Double and CmdArgEnum
 /// Test that values are properly assigned to `B`,  `Array<B>`,  and `Variadic<B>` with and  wtihout
 /// default values. Test `Optional<B>` witn (implied) default value of nil (other default values are
 /// not allowed).
-struct SB_BasicMain<B:CmdArgBasicType>:CommandNodeFrame {
-    var configuration: CommandNodeConfiguration<Void>? = CommandNodeConfiguration<Void>(
+struct SB_BasicMain<B:CmdArgBasicType>:CommandNodeDef {
+    var configuration: CommandNodeConfig<Void>? = CommandNodeConfig<Void>(
         commandName: "sb-basic-main",
         embellishments: [
             .embellish("argv", typeName: "Variadic<\(B.self)>"),
@@ -89,7 +89,7 @@ struct SB_BasicTests {
         ----------------
         0
         """
-        let ok = await testOutput(of: SB_BasicMain<String>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<String>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -105,7 +105,7 @@ struct SB_BasicTests {
         vv1 vv2 vv3
         mm
         """
-        let ok = await testOutput(of: SB_BasicMain<String>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<String>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -118,7 +118,7 @@ struct SB_BasicTests {
         ----------------
         0
         """
-        let ok = await testOutput(of: SB_BasicMain<Int>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<Int>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -134,7 +134,7 @@ struct SB_BasicTests {
         44 55 66
         77
         """
-        let ok = await testOutput(of: SB_BasicMain<Int>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<Int>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -147,7 +147,7 @@ struct SB_BasicTests {
         ----------------
         0.0
         """
-        let ok = await testOutput(of: SB_BasicMain<Double>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<Double>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -163,7 +163,7 @@ struct SB_BasicTests {
         44.0 55.0 66.0
         77.0
         """
-        let ok = await testOutput(of: SB_BasicMain<Double>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<Double>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -176,7 +176,7 @@ struct SB_BasicTests {
         ----------------
         0
         """
-        let ok = await testOutput(of: SB_BasicMain<Token>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<Token>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 
@@ -192,7 +192,7 @@ struct SB_BasicTests {
         3 3 3
         four
         """
-        let ok = await testOutput(of: SB_BasicMain<Token>.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: SB_BasicMain<Token>().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 }

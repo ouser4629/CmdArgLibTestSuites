@@ -58,7 +58,7 @@ struct HelpScreenTest {
           <shell> can be one of "zsh" or "fish". If specified, a corresponding
           completion script is printed to standard output.
         """
-        let ok = await testOutput(of: PersonS.commandNode.run, with: input, expecting: expected)
+        let ok = await testOutput(of: PersonS().commandNode.run, with: input, expecting: expected)
         #expect(ok)
     }
 }
